@@ -2,6 +2,7 @@
 
 ## EXAMPLE: Sending data (including a binary file) using multipart/form-data:
 
+```
 POST /api/multipart HTTP/1.1<br>
 ... (Headers)<br>
 ...<br>
@@ -48,10 +49,11 @@ IHDR2!}øgAMA±üa cHRMz&úèu0ê`:pºQ<PeXIfMM*i&  2 !@Vlç2iTXtXML:com.ado
 ÎhH@qËßÿl(ÿ°gÀ]7ß¡ªò6]AmÞüûóCH³!¥ÉU£f?ç#fÁ²mù/¸þÑ¤AÂApga¹ûðÜW ¶æ-H<br>
 ³ñùæ0H9C4'`¼_`LúË_´(;*f©UW(aÚa&ß¿HIEND®B`<br>
 ------WebKitFormBoundaryiZLewAfltKpc8KJI--<br>
-
+```
 
 ## EXAMPLE: Sending data (including a binary file) using application/json:
 
+```
 POST /api/multipart HTTP/1.1<br>
 ... (Headers)<br>
 ...<br>
@@ -60,5 +62,5 @@ content-type: application/json<br>
 ...<br>
 
 {"pieName":"Pecan","pieIngredients":["pecans","sugar","more sugar","even more sugar","crust"],"favoritePie":true,"inventory":10,"image":{}}<br>
-
+```
 
