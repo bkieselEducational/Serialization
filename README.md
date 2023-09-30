@@ -64,7 +64,7 @@ content-type: application/json
 {"pieName":"Pecan","pieIngredients":["pecans","sugar","more sugar","even more sugar","crust"],"favoritePie":true,"inventory":10,"image":{}}
 ```
 
-# GOTCHAS:
+# Gotchas:
 
 1. There is currently no way to MANUALLY set the multipart/form-data boundary which is necessary for the serializing and deserializing of the payload data. As a direct result of this, we MUST NOT set the 'Content-Type' header when using multipart/form-data and the FormData class that is defined by Javascript. By omitting this header, we are forcing the browser to examine the payload and set these values for us. Example below.
 ```
@@ -120,6 +120,7 @@ const response = await fetch('/backend/upload', {
 
 // Our JSON Payload: {"pieName":"Pecan","pieIngredients":["pecans","sugar","more sugar","even more sugar","crust"],"favoritePie":true,"inventory":10,"image":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAhCAYAAACbffiEAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAUGVYSWZNTQAqAAAACAACARIAAwAAAAEAAQAAh2kABAAAAAEAAAAmAAAAAAADoAEAAwAAAAEAAQAAoAIABAAAAAEAAAAyoAMABAAAAAEAAAAhAAAAAEBWbOcAAAIyaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA2LjAuMCI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj4xMjA8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjE8L2V4aWY6Q29sb3JTcGFjZT4KICAgICAgICAgPGV4aWY6UGl4ZWxYRGltZW5zaW9uPjEyMDwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgrmIV0+AAACDElEQVRYCWOsjFL+z4AEGBl/IPEQzJfvvyM4UBYzMxOGWKSvCIYYSICDiRlDvG/aXQwxkICqMieGuJQsO4aYo4sAXAzTJXCpocUY9chgiy/GpgQFlDwiJMWK1Y3uHjwY4lPaX2KIMbF9wxADCbR18mKIM7J+xhADCfx8g+IksJrHT6Uw1H5nQOSb0aSFETwDLDAaIwMcARjWD5sYYeETQK1xF85/geFbkMDzY6IY4pI/EKUGTPI3K2aJA5JrjcVsMbBiNhbAxhz7huomkOCOTbfAcsjENwYuOHfYxMioR+BxOkgYwyZGWN7+YUQJ01PT+VH4MM6Kg4IwJpzWNFCAs2GMreuPw5goNDvTbxQ+iKNrYYghBhIw/PwAQ/z9X24MMS4ORMEybGJk1CMY8TzAAqMxMsARgGE9Y1WaIiLrA6X//8NQAxZwlMPsWLlaYyr+8AGzdAMZwMaD2WHj5MNstoDUXv70BkShAAFBzE7Y138Iu0aTFkpwDQLOaIwMgkhAcQLL3/9sKAIM/7BnwF0336GqA/I2XUFt3oAU/PvzGkMdSICdHbOPIaXJh1WtoxFmP+cPI2bBsm35L7j+0aQFD4pBwhiNkUESEXBnDJsYYbn78APcVyCGthLmGC1InI0Ns4nx+QvmMAgfHwtIOQYIDkM0J2CSvJxfYEwU+stftJIUKDt/KmapVVeCKGEB2pthgibfv0gAAAAASUVORK5CYII="}
 ```
+3. Please note that there is NO direct correlation between flask's wtforms and multipart/form-data. Although when you use multipart/form-data, you will continue to find the respective values in 'form.data['key_name']', just as if you had used a JSON formatted payload, the 'form.data' itself NEVER implies multipart/form-data in and of itself! 
 
 # Recommendations:
 
