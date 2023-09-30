@@ -2,14 +2,14 @@
 
 ## EXAMPLE: Sending data (including a binary file) using multipart/form-data:
 
-POST /api/multipart HTTP/1.1
-... (Headers)
-...
-content-type: multipart/form-data; boundary=----WebKitFormBoundaryiZLewAfltKpc8KJI
-... (More Headers)
-...
+POST /api/multipart HTTP/1.1<br>
+... (Headers)<br>
+...<br>
+content-type: multipart/form-data; boundary=----WebKitFormBoundaryiZLewAfltKpc8KJI<br>
+... (More Headers)<br>
+...<br>
 
-------WebKitFormBoundaryiZLewAfltKpc8KJI
+------WebKitFormBoundaryiZLewAfltKpc8KJI<br>
 Content-Disposition: form-data; name="pieName"
 
 Pecan
