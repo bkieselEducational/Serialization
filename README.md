@@ -3,34 +3,34 @@
 ## EXAMPLE: Sending data (including a binary file) using multipart/form-data:
 
 ```
-POST /api/multipart HTTP/1.1<br>
-... (Headers)<br>
-...<br>
-content-type: multipart/form-data; boundary=----WebKitFormBoundaryiZLewAfltKpc8KJI<br>
-... (More Headers)<br>
-...<br>
+POST /api/multipart HTTP/1.1
+... (Headers)
+...
+content-type: multipart/form-data; boundary=----WebKitFormBoundaryiZLewAfltKpc8KJI
+... (More Headers)
+...
 
-------WebKitFormBoundaryiZLewAfltKpc8KJI<br>
-Content-Disposition: form-data; name="pieName"<br>
+------WebKitFormBoundaryiZLewAfltKpc8KJI
+Content-Disposition: form-data; name="pieName"
 
-Pecan<br>
-------WebKitFormBoundaryiZLewAfltKpc8KJI<br>
-Content-Disposition: form-data; name="pieIngredients"<br>
+Pecan
+------WebKitFormBoundaryiZLewAfltKpc8KJI
+Content-Disposition: form-data; name="pieIngredients"
 
-pecans,sugar,more sugar,even more sugar,crust<br>
-------WebKitFormBoundaryiZLewAfltKpc8KJI<br>
-Content-Disposition: form-data; name="favoritePie"<br>
+pecans,sugar,more sugar,even more sugar,crust
+------WebKitFormBoundaryiZLewAfltKpc8KJI
+Content-Disposition: form-data; name="favoritePie"
 
-true<br>
-------WebKitFormBoundaryiZLewAfltKpc8KJI<br>
-Content-Disposition: form-data; name="inventory"<br>
+true
+------WebKitFormBoundaryiZLewAfltKpc8KJI
+Content-Disposition: form-data; name="inventory"
 
-10<br>
-------WebKitFormBoundaryiZLewAfltKpc8KJI<br>
-Content-Disposition: form-data; name="image"; filename="low_res_shrek.png"<br>
-Content-Type: image/png<br>
+10
+------WebKitFormBoundaryiZLewAfltKpc8KJI
+Content-Disposition: form-data; name="image"; filename="low_res_shrek.png"
+Content-Type: image/png
 
-PNG<br>
+PNG
 
 
 IHDR2!}øgAMA±üa cHRMz&úèu0ê`:pºQ<PeXIfMM*i&  2 !@Vlç2iTXtXML:com.adobe.xmp<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="XMP Core 6.0.0">
@@ -45,22 +45,22 @@ IHDR2!}øgAMA±üa cHRMz&úèu0ê`:pºQ<PeXIfMM*i&  2 !@Vlç2iTXtXML:com.ado
       </rdf:Description>
    </rdf:RDF>
 </x:xmpmeta>
-æ!]>IDATX	c¬RþÏ ñÌï¿#8P33X¤¯HC¼oÚ]1ª2'¸,;£\Ó%p©¡ÅõÈ`/Æ¦<"$ÅÕî<âSÚ_b1±}Ã	´uòb3²~Æ	ü|â$°ÇO¥0Ô~g@äÑ¤<,0#Öaá@qÎá[Àóc¢â?¥Lò7+fkÅl1°b6ÀÆûê&àM·ÀrÈÄ7.8wØÄÈ¨Gàq:HÃ&FXÞþaD<br>	ÓSÓùQø0Î0&Ö4P³aëÃ(4;Óo>£ka!0üüCüý_n1.DÁ2lbdÔ#ñ<À£12Àa=cU""ë¥ÿÿÃPpÃìX¹Zc*þð³tÀÆÙaãäÃl¶Ô^þôD¡AÌNØ×»FJp<br>
-ÎhH@qËßÿl(ÿ°gÀ]7ß¡ªò6]AmÞüûóCH³!¥ÉU£f?ç#fÁ²mù/¸þÑ¤AÂApga¹ûðÜW ¶æ-H<br>
-³ñùæ0H9C4'`¼_`LúË_´(;*f©UW(aÚa&ß¿HIEND®B`<br>
-------WebKitFormBoundaryiZLewAfltKpc8KJI--<br>
+æ!]>IDATX	c¬RþÏ ñÌï¿#8P33X¤¯HC¼oÚ]1ª2'¸,;£\Ó%p©¡ÅõÈ`/Æ¦<"$ÅÕî<âSÚ_b1±}Ã	´uòb3²~Æ	ü|â$°ÇO¥0Ô~g@äÑ¤<,0#Öaá@qÎá[Àóc¢â?¥Lò7+fkÅl1°b6ÀÆûê&àM·ÀrÈÄ7.8wØÄÈ¨Gàq:HÃ&FXÞþaD	ÓSÓùQø0Î0&Ö4P³aëÃ(4;Óo>£ka!0üüCüý_n1.DÁ2lbdÔ#ñ<À£12Àa=cU""ë¥ÿÿÃPpÃìX¹Zc*þð³tÀÆÙaãäÃl¶Ô^þôD¡AÌNØ×»FJp
+ÎhH@qËßÿl(ÿ°gÀ]7ß¡ªò6]AmÞüûóCH³!¥ÉU£f?ç#fÁ²mù/¸þÑ¤AÂApga¹ûðÜW ¶æ-H
+³ñùæ0H9C4'`¼_`LúË_´(;*f©UW(aÚa&ß¿HIEND®B`
+------WebKitFormBoundaryiZLewAfltKpc8KJI--
 ```
 
 ## EXAMPLE: Sending data (including a binary file) using application/json:
 
 ```
-POST /api/multipart HTTP/1.1<br>
-... (Headers)<br>
-...<br>
-content-type: application/json<br>
-... (More Headers)<br>
-...<br>
+POST /api/multipart HTTP/1.1
+... (Headers)
+...
+content-type: application/json
+... (More Headers)
+...
 
-{"pieName":"Pecan","pieIngredients":["pecans","sugar","more sugar","even more sugar","crust"],"favoritePie":true,"inventory":10,"image":{}}<br>
+{"pieName":"Pecan","pieIngredients":["pecans","sugar","more sugar","even more sugar","crust"],"favoritePie":true,"inventory":10,"image":{}}
 ```
 
