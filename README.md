@@ -1,6 +1,6 @@
 # Serialization
 
-## EXAMPLE: Sending data (including a binary file) using multipart/form-data:
+## EXAMPLE: HTTP Request -> Sending data (including a binary file) using multipart/form-data:
 
 ```
 POST /api/multipart HTTP/1.1
@@ -51,7 +51,7 @@ IHDR2!}øgAMA±üa cHRMz&úèu0ê`:pºQ<PeXIfMM*i&  2 !@Vlç2iTXtXML:com.ado
 ------WebKitFormBoundaryiZLewAfltKpc8KJI--
 ```
 
-## EXAMPLE: Sending data (including a binary file) using application/json:
+## EXAMPLE: HTTP Request -> Sending data (including a binary file) using application/json:
 
 ```
 POST /api/multipart HTTP/1.1
