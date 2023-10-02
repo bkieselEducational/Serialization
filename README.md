@@ -124,4 +124,4 @@ const response = await fetch('/backend/upload', {
 
 # Recommendations:
 
-In consideration of the above, it is generally recommended to send binary data using multipart/form-data serialization as it is simpler to implement and is less resource intensive. When doing so, DO NOT set the 'Content-Type' Header on your request!!
+In consideration of the above, it is generally recommended to send binary data (image, audio, video files) using multipart/form-data serialization as it is simpler to implement and is less resource intensive. When doing so, DO NOT set the 'Content-Type' Header on your request!!
