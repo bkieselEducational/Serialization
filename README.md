@@ -1,4 +1,4 @@
-# Serialization
+# Serialization of Binary Data
 
 ## EXAMPLE: HTTP Request -> Sending data (including a binary file) using multipart/form-data:
 
