@@ -2,7 +2,7 @@
 
 ## EXAMPLE: HTTP Request -> Sending data (including a binary file) using multipart/form-data:
 
-```
+```python
 POST /api/multipart HTTP/1.1
 ... (Headers)
 ...
@@ -53,7 +53,7 @@ IHDR2!}øgAMA±üa cHRMz&úèu0ê`:pºQ<PeXIfMM*i&  2 !@Vlç2iTXtXML:com.ado
 
 ## EXAMPLE: HTTP Request -> Sending data (including a binary file) using application/json (Please note the empty object for the "image" parameter):
 
-```
+```javascript
 POST /api/multipart HTTP/1.1
 ... (Headers)
 ...
@@ -61,13 +61,13 @@ content-type: application/json
 ... (More Headers)
 ...
 
-{"pieName":"Pecan","pieIngredients":["pecans","sugar","more sugar","even more sugar","crust"],"favoritePie":true,"inventory":10,"image":{}}
+'{"pieName":"Pecan","pieIngredients":["pecans","sugar","more sugar","even more sugar","crust"],"favoritePie":true,"inventory":10,"image":{}}'
 ```
 
 # Gotchas:
 
 1. There is currently no way to MANUALLY set the multipart/form-data boundary which is necessary for the serializing and deserializing of the payload data. As a direct result of this, we MUST NOT set the 'Content-Type' header when using multipart/form-data and the FormData class that is defined by Javascript. By omitting this header, we are forcing the browser to examine the payload and set these values for us. Example below.
-```
+```javascript
 const requestData = new FormData();
 requestData.append('file', file); // file from File API
 
@@ -82,7 +82,7 @@ const response = await fetch('/backend/upload', {
 
 2. The JSON format does not understand how to encode binary data. It observes 3 basic data types: Number, String, and Boolean. These types are generally inferred on the receiving end by the pressence or lack of surrounding quotes. "boolean":true will be parsed as a boolean, while "boolean":"true" would be parsed as a string. We can make a similar example for numbers. In addition to these basic types, JSON is capable of sending reference data types, such as Objects and Arrays, by first encoding them as strings (shown above). Ultimately, a JSON payload is sent as a string and parsed into it's constituent parts on the receiving side. In the event that we NEED to send a binary file using JSON formatting, we must first convert the binary file content into a base64 encoded string. This not only increases the size of the payload data, as the encoding generally increases the size of the file content by 25%, but also adds the overhead of encoding and decoding the file content as a part of our serialization procedure. Example below.
 
-```
+```javascript
   const sendJSON = async (e) => {
     e.preventDefault();
 
